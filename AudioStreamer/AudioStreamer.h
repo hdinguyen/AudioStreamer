@@ -24,6 +24,8 @@
 /* This file has been heavily modified since its original distribution bytes
    Alex Crichton for the Hermes project */
 
+#import <UIKit/UIKit.h>
+
 #import <AudioToolbox/AudioToolbox.h>
 #import <Foundation/Foundation.h>
 
@@ -170,6 +172,9 @@ struct queued_packet;
  * AudioStreamer objects need to be created/managed.
  */
 @interface AudioStreamer : NSObject {
+	#if TARGET_OS_IPHONE
+		UIBackgroundTaskIdentifier bgTaskId; //background support related code
+	#endif
   /* Properties specified before the stream starts. None of these properties
    * should be changed after the stream has started or otherwise it could cause
    * internal inconsistencies in the stream. Detail explanations of each
