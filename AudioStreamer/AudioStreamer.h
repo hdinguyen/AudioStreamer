@@ -24,7 +24,9 @@
 /* This file has been heavily modified since its original distribution bytes
    Alex Crichton for the Hermes project */
 
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#endif
 
 #import <AudioToolbox/AudioToolbox.h>
 #import <Foundation/Foundation.h>
